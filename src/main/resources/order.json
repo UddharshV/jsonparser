@@ -1,0 +1,19 @@
+{
+  "orderId": "ORD-101",
+  "customer": {
+    "name": "Peter Parker",
+    "email": "peter@dailybugle.com",
+    "loyaltyTier": "gold"
+  },
+  "items": [
+    {
+      "name": "Notebook",
+      "quantity": 2
+    },
+    {
+      "name": "Pen",
+      "quantity": 3
+    }
+  ],
+  "internalNotes": "rush delivery"
+}

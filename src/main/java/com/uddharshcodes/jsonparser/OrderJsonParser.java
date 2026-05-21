@@ -3,27 +3,33 @@ package com.uddharshcodes.jsonparser;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.*;
 
-public class Json {
-    private static ObjectMapper objectMapper= getDefaultObjectMapper();
+public class OrderJsonParser {
+    private static ObjectMapper objectMapper = getDefaultObjectMapper();
 
-    public static ObjectMapper getDefaultObjectMapper(){
+    private static ObjectMapper getDefaultObjectMapper(){
         ObjectMapper defaultObjectMapper = new ObjectMapper();
+
+        //configuration of ObjectMapper
         defaultObjectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         return defaultObjectMapper;
     }
 
+    //Convert given input String into a JSON node
     public static JsonNode parse(String src) throws JsonProcessingException {
         return objectMapper.readTree(src);
     }
 
-    public static <T> T fromJson(JsonNode node, Class <T> myClass) throws JsonProcessingException {
-        return objectMapper.treeToValue(node,myClass);
+    //Convert intermediate JSON node into a POJO
+    public static <T> T fromNode(JsonNode node, Class <T> MyClass) throws JsonProcessingException {
+        return objectMapper.treeToValue(node, MyClass);
     }
 
-    public static JsonNode toJson(Object obj){
+    //Convert POJO back into an intermediate JSON node
+    public static JsonNode toNode(Object obj){
         return objectMapper.valueToTree(obj);
     }
 
+    //Convert intermediate JSON node back into a String format
     public static String stringify(JsonNode node) throws JsonProcessingException {
         return generateString(node, false);
     }
@@ -36,5 +42,4 @@ public class Json {
             objectWriter = objectWriter.with(SerializationFeature.INDENT_OUTPUT);
         return objectWriter.writeValueAsString(node);
     }
-
 }

@@ -1,8 +1,7 @@
-package com.uddharshcodes.jsonparser.pojo;
+package com.uddharshcodes.jsonparser;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.uddharshcodes.jsonparser.JsonExerciseOne;
 import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.uddharshcodes.jsonparser.pojo.ExerciseOneTestPOJO;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

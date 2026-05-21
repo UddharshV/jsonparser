@@ -1,0 +1,15 @@
+{
+  "authorName": "Stephen King",
+  "books": [
+    {
+      "title": "You Like It Darker",
+      "inPrint": true,
+      "publishDate": "2024-05-21"
+    },
+    {
+      "title": "The Shining",
+      "inPrint": true,
+      "publishDate": "1977-01-28"
+    }
+  ]
+}
